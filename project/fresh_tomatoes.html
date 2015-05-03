@@ -1,0 +1,1009 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>Fresh Tomatoes!</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="uJfLoE6hanc" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BODAzNDMxMzAxOV5BMl5BanBnXkFtZTgwMDMxMjA4MjE@._V1_SX300.jpg" width="220" height="342">
+    <h2>Birdman</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A washed-up actor, who once played an iconic superhero, battles his ego and attempts to recover his family, his career and himself in the days leading up to the opening of his Broadway play.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2014 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          93% ;
+        </span>
+        <span>Genre: Comedy, Drama</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="99k3u9ay1gs" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTkxNzI3ODI4Nl5BMl5BanBnXkFtZTgwMjkwMjY4MjE@._V1_SX300.jpg" width="220" height="342">
+    <h2>American Sniper</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      Navy SEAL sniper Chris Kyle's pinpoint accuracy saves countless lives on the battlefield and turns him into a legend. Back home to his wife and kids after four tours of duty, however, Chris finds that it is the war he can't leave behind.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2014 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          73% ;
+        </span>
+        <span>Genre: Action, Biography, Thriller</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Y0oX0xiwOv8" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTYzNDc2MDc0N15BMl5BanBnXkFtZTgwOTcwMDQ5MTE@._V1_SX300.jpg" width="220" height="342">
+    <h2>Boyhood</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      The life of Mason, from early childhood to his arrival at college.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2014 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          98% ;
+        </span>
+        <span>Genre: Drama</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="1Fg5iWmQjwk" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMzM5NjUxOTEyMl5BMl5BanBnXkFtZTgwNjEyMDM0MDE@._V1_SX300.jpg" width="220" height="342">
+    <h2>The Grand Budapest Hotel</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      The adventures of Gustave H, a legendary concierge at a famous hotel from the fictional Republic of Zubrowka between the first and second World Wars, and Zero Moustafa, the lobby boy who becomes his most trusted friend.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2014 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          92% ;
+        </span>
+        <span>Genre: Adventure, Comedy, Drama</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="S5CjKEFb-sM" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BNDkwNTEyMzkzNl5BMl5BanBnXkFtZTgwNTAwNzk3MjE@._V1_SX300.jpg" width="220" height="342">
+    <h2>The Imitation Game</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      During World War II, mathematician Alan Turing tries to crack the enigma code with help from fellow mathematicians.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2014 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          89% ;
+        </span>
+        <span>Genre: Biography, Drama, Thriller</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="x6t7vVTxaic" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BODMxNjAwODA2Ml5BMl5BanBnXkFtZTgwMzc0NjgzMzE@._V1_SX300.jpg" width="220" height="342">
+    <h2>Selma</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A chronicle of Martin Luther King's campaign to secure equal voting rights via an epic march from Selma to Montgomery, Alabama in 1965.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2014 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          99% ;
+        </span>
+        <span>Genre: Biography, Drama, History</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Salz7uGp72c" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTAwMTU4MDA3NDNeQTJeQWpwZ15BbWU4MDk4NTMxNTIx._V1_SX300.jpg" width="220" height="342">
+    <h2>The Theory of Everything</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A look at the relationship between the famous physicist Stephen Hawking and his wife.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2014 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          79% ;
+        </span>
+        <span>Genre: Biography, Drama, Romance</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="7d_jQycdQGo" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTU4OTQ3MDUyMV5BMl5BanBnXkFtZTgwOTA2MjU0MjE@._V1_SX300.jpg" width="220" height="342">
+    <h2>Whiplash</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student's potential.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2014 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          95% ;
+        </span>
+        <span>Genre: Drama, Music</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="z02Ie8wKKRg" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMjExMTEzODkyN15BMl5BanBnXkFtZTcwNTU4NTc4OQ@@._V1_SX300.jpg" width="220" height="342">
+    <h2>12 Years a Slave</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      In the antebellum United States, Solomon Northup, a free black man from upstate New York, is abducted and sold into slavery.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2013 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          N/A% ;
+        </span>
+        <span>Genre: Biography, Drama, History</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ST7a1aK_lG0" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BNjkxMTc0MDc4N15BMl5BanBnXkFtZTgwODUyNTI1MDE@._V1_SX300.jpg" width="220" height="342">
+    <h2>American Hustle</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A con man, Irving Rosenfeld, along with his seductive partner Sydney Prosser, is forced to work for a wild FBI agent, Richie DiMaso, who pushes them into a world of Jersey powerbrokers and mafia.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2013 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          93% ;
+        </span>
+        <span>Genre: Crime, Drama</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="_3ASoBrFGlc" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTQzNzExMDg3Ml5BMl5BanBnXkFtZTgwODU1NzEzMDE@._V1_SX300.jpg" width="220" height="342">
+    <h2>Captain Phillips</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      The true story of Captain Richard Phillips and the 2009 hijacking by Somali pirates of the US-flagged MV Maersk Alabama, the first American cargo ship to be hijacked in two hundred years.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2013 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          93% ;
+        </span>
+        <span>Genre: Biography, Drama, Thriller</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="U8utPuIFVnU" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTYwMTA4MzgyNF5BMl5BanBnXkFtZTgwMjEyMjE0MDE@._V1_SX300.jpg" width="220" height="342">
+    <h2>Dallas Buyers Club</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      In 1985 Dallas, electrician and hustler Ron Woodroof works around the system to help AIDS patients get the medication they need after he is himself diagnosed with the disease.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2013 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          93% ;
+        </span>
+        <span>Genre: Biography, Drama</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="OiTiKOy59o4" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BNjE5MzYwMzYxMF5BMl5BanBnXkFtZTcwOTk4MTk0OQ@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Gravity</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A medical engineer and an astronaut work together to survive after a catastrophe destroys their shuttle and leaves them adrift in orbit.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2013 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          97% ;
+        </span>
+        <span>Genre: Sci-Fi, Thriller</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="WzV6mXIOVl4" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMjA1Nzk0OTM2OF5BMl5BanBnXkFtZTgwNjU2NjEwMDE@._V1_SX300.jpg" width="220" height="342">
+    <h2>Her</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A lonely writer develops an unlikely relationship with his newly purchased operating system that's designed to meet his every need.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2013 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          94% ;
+        </span>
+        <span>Genre: Drama, Romance, Sci-Fi</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="UT5tqPojMtg" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTU2Mjk2NDkyMl5BMl5BanBnXkFtZTgwNTk0NzcyMDE@._V1_SX300.jpg" width="220" height="342">
+    <h2>Nebraska</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      An aging, booze-addled father makes the trip from Montana to Nebraska with his estranged son in order to claim a million-dollar Mega Sweepstakes Marketing prize.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2013 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          92% ;
+        </span>
+        <span>Genre: Adventure, Drama</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="rG3QP8foCvg" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMjA5ODgyNzcxMV5BMl5BanBnXkFtZTgwMzkzOTYzMDE@._V1_SX300.jpg" width="220" height="342">
+    <h2>Philomena</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A world-weary political journalist picks up the story of a woman's search for her son, who was taken away from her decades ago after she became pregnant and was forced to live in a convent.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2013 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          92% ;
+        </span>
+        <span>Genre: Biography, Drama</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="iszwuX1AK6A" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg" width="220" height="342">
+    <h2>The Wolf of Wall Street</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2013 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          77% ;
+        </span>
+        <span>Genre: Biography, Comedy, Crime</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="w918Eh3fij0" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTc3MjI0MjM0NF5BMl5BanBnXkFtZTcwMTYxMTQ1OA@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Argo</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      Acting under the cover of a Hollywood producer scouting a location for a science fiction film, a CIA agent launches a dangerous operation to rescue six Americans in Tehran during the U.S. hostage crisis in Iran in 1980.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2012 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          96% ;
+        </span>
+        <span>Genre: Drama, Thriller</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="F7D-Y3T0XFA" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTk1NTc3NDc4MF5BMl5BanBnXkFtZTcwNjYwNDk0OA@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Amour</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      Georges and Anne are an octogenarian couple. They are cultivated, retired music teachers. Their daughter, also a musician, lives in Britain with her family. One day, Anne has a stroke, and the couple's bond of love is severely tested.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2012 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          N/A% ;
+        </span>
+        <span>Genre: Drama, Romance</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ZF7i2n5NXLo" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTgxNDM5MDM1Ml5BMl5BanBnXkFtZTcwOTYwNzQ3Nw@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Beasts of the Southern Wild</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      Faced with both her hot-tempered father's fading health and melting ice-caps that flood her ramshackle bayou community and unleash ancient aurochs, six-year-old Hushpuppy must learn the ways of courage and love.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2012 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          86% ;
+        </span>
+        <span>Genre: Drama, Fantasy</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="eUdM9vrCbow" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Django Unchained</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2012 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          88% ;
+        </span>
+        <span>Genre: Western</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="IuEFm84s4oI" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTIzMTE1OTYwNV5BMl5BanBnXkFtZTcwODM4NTc0MQ@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Les Miserables</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      Jean Valjean, convicted of stealing bread, is hounded for decades by the relentless and cruel policeman Javert.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 1978 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          N/A% ;
+        </span>
+        <span>Genre: Drama, History</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="mZEZ35Fhvuc" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BNTg2OTY2ODg5OF5BMl5BanBnXkFtZTcwODM5MTYxOA@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Life of Pi</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A young man who survives a disaster at sea is hurtled into an epic journey of adventure and discovery. While cast away, he forms an unexpected connection with another survivor: a fearsome Bengal tiger.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2012 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          87% ;
+        </span>
+        <span>Genre: Adventure, Drama</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="qiSAbAuLhqs" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTQzNzczMDUyNV5BMl5BanBnXkFtZTcwNjM2ODEzOA@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Lincoln</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      As the Civil War continues to rage, America's president struggles with continuing carnage on the battlefield as he fights with many inside his own cabinet on the decision to emancipate the slaves.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2012 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          90% ;
+        </span>
+        <span>Genre: Biography, Drama, History</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Lj5_FhLaaQQ" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTM2MTI5NzA3MF5BMl5BanBnXkFtZTcwODExNTc0OA@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Silver Linings Playbook</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      After a stint in a mental institution, former teacher Pat Solitano moves back in with his parents and tries to reconcile with his ex-wife. Things get more challenging when Pat meets Tiffany, a mysterious girl with problems of her own.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2012 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          92% ;
+        </span>
+        <span>Genre: Comedy, Drama, Romance</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="FSEBstlH6WY" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTQ4OTUyNzcwN15BMl5BanBnXkFtZTcwMTQ1NDE3OA@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Zero Dark Thirty</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A chronicle of the decade-long hunt for al-Qaeda terrorist leader Osama bin Laden after the September 2001 attacks, and his death at the hands of the Navy S.E.A.L.s Team 6 in May 2011.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2012 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          93% ;
+        </span>
+        <span>Genre: Drama, History, Thriller</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ixqr8D7J_Kc" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMzk0NzQxMTM0OV5BMl5BanBnXkFtZTcwMzU4MDYyNQ@@._V1_SX300.jpg" width="220" height="342">
+    <h2>The Artist</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A silent movie star meets a young dancer, but the arrival of talking pictures sends their careers in opposite directions.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2011 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          98% ;
+        </span>
+        <span>Genre: Comedy, Drama, Romance</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="t4UUQqefajc" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMjAyNTA1MTcyN15BMl5BanBnXkFtZTcwNjEyODczNQ@@._V1_SX300.jpg" width="220" height="342">
+    <h2>The Descendants</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A land baron tries to reconnect with his two daughters after his wife is seriously injured in a boating accident.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2011 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          89% ;
+        </span>
+        <span>Genre: Comedy, Drama</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Z_quK9SEGYE" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTUxNzYwMTE3NV5BMl5BanBnXkFtZTcwMDY2NzU4Ng@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Extremely Loud & Incredibly Close</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A nine-year-old amateur inventor, Francophile, and pacifist searches New York City for the lock that matches a mysterious key left behind by his father, who died in the World Trade Center on September 11, 2001.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2011 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          46% ;
+        </span>
+        <span>Genre: Adventure, Drama, Mystery</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="UVTMkINRChk" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTM5OTMyMjIxOV5BMl5BanBnXkFtZTcwNzU4MjIwNQ@@._V1_SX300.jpg" width="220" height="342">
+    <h2>The Help</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      An aspiring author during the civil rights movement of the 1960s decides to write a book detailing the African-American maids' point of view on the white families for which they work, and the hardships they go through on a daily basis.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2011 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          76% ;
+        </span>
+        <span>Genre: Drama</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="hR-kP-olcpM" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMjAzNzk5MzgyNF5BMl5BanBnXkFtZTcwOTE4NDU5Ng@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Hugo</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      Set in 1930s Paris, an orphan who lives in the walls of a train station is wrapped up in a mystery involving his late father and an automaton.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2011 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          94% ;
+        </span>
+        <span>Genre: Adventure, Drama, Family</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="FAfR8omt-CY" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTM4NjY1MDQwMl5BMl5BanBnXkFtZTcwNTI3Njg3NA@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Midnight in Paris</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      While on a trip to Paris with his fiancée's family, a nostalgic screenwriter finds himself mysteriously going back to the 1920s every day at midnight.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2011 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          93% ;
+        </span>
+        <span>Genre: Comedy, Romance</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="AiAHlZVgXjk" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMjAxOTU3Mzc1M15BMl5BanBnXkFtZTcwMzk1ODUzNg@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Moneyball</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      Oakland A's general manager Billy Beane's successful attempt to assemble a baseball team on a lean budget by employing computer-generated analysis to acquire new players.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2011 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          94% ;
+        </span>
+        <span>Genre: Biography, Drama, Sport</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="WXRYA1dxP_0" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BNTgyNTQzMDEwNV5BMl5BanBnXkFtZTcwMTQxNjI4NA@@._V1_SX300.jpg" width="220" height="342">
+    <h2>The Tree of Life</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      The story of a family in Waco, Texas in 1956. The eldest son witnesses the loss of innocence and struggles with his parents' conflicting teachings.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2011 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          84% ;
+        </span>
+        <span>Genre: Drama, Fantasy</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="QhueHIXbTF4" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMjExNzkxOTYyNl5BMl5BanBnXkFtZTcwODA0MjU4Ng@@._V1_SX300.jpg" width="220" height="342">
+    <h2>War Horse</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      Young Albert enlists to serve in World War I after his beloved horse is sold to the cavalry. Albert's hopeful journey takes him out of England and to the front lines as the war rages on.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2011 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          77% ;
+        </span>
+        <span>Genre: Drama, War</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="pzI4D6dyp_o" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMzU5MjEwMTg2Nl5BMl5BanBnXkFtZTcwNzM3MTYxNA@@._V1_SX300.jpg" width="220" height="342">
+    <h2>The King's Speech</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      The story of King George VI of the United Kingdom of Great Britain and Northern Ireland, his impromptu ascension to the throne and the speech therapist who helped the unsure monarch become worthy of it.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2010 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          94% ;
+        </span>
+        <span>Genre: Biography, Drama, History</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="OlhLOWTnVoQ" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTc2NjMzOTE3Ml5BMl5BanBnXkFtZTcwMDE0OTc5Mw@@._V1_SX300.jpg" width="220" height="342">
+    <h2>127 Hours</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A mountain climber becomes trapped under a boulder while canyoneering alone near Moab, Utah and resorts to desperate measures in order to survive.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2010 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          93% ;
+        </span>
+        <span>Genre: Adventure, Biography, Drama</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="5jaI1XOB-bs" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BNzY2NzI4OTE5MF5BMl5BanBnXkFtZTcwMjMyNDY4Mw@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Black Swan</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A ballet dancer wins the lead in "Swan Lake" and is perfect for the role of the delicate White Swan - Princess Odette - but slowly loses her mind as she becomes more and more like Odile, the Black Swan.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2010 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          87% ;
+        </span>
+        <span>Genre: Drama, Mystery, Thriller</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="71l-kIhJ5j8" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTM0ODk3MjM1MV5BMl5BanBnXkFtZTcwNzc1MDIwNA@@._V1_SX300.jpg" width="220" height="342">
+    <h2>The Fighter</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A look at the early years of boxer "Irish" Micky Ward and his brother who helped train him before going pro in the mid 1980s.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2010 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          91% ;
+        </span>
+        <span>Genre: Biography, Drama, Sport</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="8hP9D6kZseM" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Inception</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A thief who steals corporate secrets through use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2010 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          86% ;
+        </span>
+        <span>Genre: Action, Mystery, Sci-Fi</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="RixlpHKfb6M" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMjE4NTMwNDg5MF5BMl5BanBnXkFtZTcwNDY2ODE0Mw@@._V1_SX300.jpg" width="220" height="342">
+    <h2>The Kids Are All Right</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      Two children conceived by artificial insemination bring their father into their family life.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2010 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          93% ;
+        </span>
+        <span>Genre: Comedy, Drama</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="lB95KLmpLR4" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTM2ODk0NDAwMF5BMl5BanBnXkFtZTcwNTM1MDc2Mw@@._V1_SX300.jpg" width="220" height="342">
+    <h2>The Social Network</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      Harvard student Mark Zuckerberg creates the social networking site that would become known as Facebook, but is later sued by two brothers who claimed he stole their idea, and the cofounder who was later squeezed out of the business.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2010 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          96% ;
+        </span>
+        <span>Genre: Biography, Drama</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="JcpWXaA2qeg" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Toy Story 3</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      The toys are mistakenly delivered to a day-care center instead of the attic right before Andy leaves for college, and it's up to Woody to convince the other toys that they weren't abandoned and to return home.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2010 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          99% ;
+        </span>
+        <span>Genre: Animation, Adventure, Comedy</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="CUiCu-zuAgM" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMjIxNjAzODQ0N15BMl5BanBnXkFtZTcwODY2MjMyNA@@._V1_SX300.jpg" width="220" height="342">
+    <h2>True Grit</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      A tough U.S. Marshal helps a stubborn teenager track down her father's murderer.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2010 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          96% ;
+        </span>
+        <span>Genre: Adventure, Drama, Western</span>
+        )
+      </span>
+    </p>   
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="5O8F8JtSVmI" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMjA0OTM3MDMxNF5BMl5BanBnXkFtZTcwMDY1MjI0Mw@@._V1_SX300.jpg" width="220" height="342">
+    <h2>Winter's Bone</h2>
+    <!-- by kin 20150504 -->
+    <p class="text-left" style="height:60px">
+      An unflinching Ozark Mountain girl hacks through dangerous social terrain as she hunts down her drug-dealing father while trying to keep her family intact.
+      <span style="font-size:75%;">
+        ( 
+        <span>Year: 2010 ; </span> 
+        <span>
+          <img title="Tomatometer" width="10" height="10"
+            src="https://openclipart.org/image/300px/svg_to_png/204590/1416249767.png">
+          94% ;
+        </span>
+        <span>Genre: Drama</span>
+        )
+      </span>
+    </p>   
+</div>
+
+    </div>
+  </body>
+</html>
