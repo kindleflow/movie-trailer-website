@@ -1,0 +1,23 @@
+# Full Stack Web Developer Nanodegree
+# P1: Movie Trailer Website
+#
+# author: H. Kin Fung
+# dates: 20150504
+
+The python program can be compiled by running 
+    "python entertainment_center.py"
+in the terminal.  
+
+Besides, it needs visits to  
+    http://www.omdbapi.com/
+    https://www.googleapis.com/youtube/v3/search
+to fetch IMDB image url, youtube video url and other meta data.  
+
+In the end, the program will generate and open an HTML file called 
+    "fresh_tomatoes.html"
+in the same directory.  
+
+
+
+Movie titles are stored in data.py.  One can edit them to let the 
+program generate the webpage for his desired movies.  
